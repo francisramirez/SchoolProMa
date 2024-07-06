@@ -1,6 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolProMa.Course.Domain.Interfaces;
+using SchoolProMa.Course.Persistance.Context;
+using SchoolProMa.Course.Persistance.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connstring = builder.Configuration.GetConnectionString("SchoolContext");
+
+
+
+builder.Services.AddDbContext<SchoolContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolContext")));
+
+// Agregar las dependencias del objeto de datos //
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -9,5 +9,12 @@ namespace SchoolProMa.Course.Domain.Entities
     {
         [Column("CourseID")]
         public override int Id { get; set; }
+
+        public string? Title { get; set; }
+
+        public int Credits { get; set; }
+
+        public int DepartmentID { get; set; }
+
     }
 }

@@ -1,0 +1,6 @@
+@SchoolProMa.CourseAdm.Api_HostAddress = http://localhost:5076
+
+GET {{SchoolProMa.CourseAdm.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

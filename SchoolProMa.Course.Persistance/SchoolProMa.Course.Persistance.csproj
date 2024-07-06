@@ -7,16 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.31" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolProMa.Course.Domain\SchoolProMa.Course.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <ProjectReference Include="..\SchoolProMa.Infraestructure\SchoolProMa.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

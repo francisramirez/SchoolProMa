@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F961EC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{FD569847-F9CD-42E1-BC2B-8906F3B4F3A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Common.Data", "SchoolProMa.Common.Data\SchoolProMa.Common.Data.csproj", "{120E2FFF-B8F0-400F-8474-3C918A56FD62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Common.Data", "SchoolProMa.Common.Data\SchoolProMa.Common.Data.csproj", "{120E2FFF-B8F0-400F-8474-3C918A56FD62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Infraestructure", "SchoolProMa.Infraestructure\SchoolProMa.Infraestructure.csproj", "{4B4DAC1E-67D9-4386-BD2E-7E1C0F285B16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Infraestructure", "SchoolProMa.Infraestructure\SchoolProMa.Infraestructure.csproj", "{4B4DAC1E-67D9-4386-BD2E-7E1C0F285B16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6C247FF8-38A9-4A0A-8376-8113591C0DC3}"
 EndProject
@@ -29,13 +29,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{44CB8E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{627BFE5F-53E6-4D21-9682-8B93A20890D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Course.Api", "SchoolProMa.Course.Api\SchoolProMa.Course.Api.csproj", "{D93FA81A-7C85-4748-A686-AFDC737CACD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Course.Api", "SchoolProMa.Course.Api\SchoolProMa.Course.Api.csproj", "{D93FA81A-7C85-4748-A686-AFDC737CACD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Course.Application", "SchoolProMa.Course.Application\SchoolProMa.Course.Application.csproj", "{98D8F362-3C6C-4F88-9496-B1E3093799F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Course.Application", "SchoolProMa.Course.Application\SchoolProMa.Course.Application.csproj", "{98D8F362-3C6C-4F88-9496-B1E3093799F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Course.Domain", "SchoolProMa.Course.Domain\SchoolProMa.Course.Domain.csproj", "{860159A3-1C3F-4FBF-9EFD-5C78B9FF4228}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Course.Domain", "SchoolProMa.Course.Domain\SchoolProMa.Course.Domain.csproj", "{860159A3-1C3F-4FBF-9EFD-5C78B9FF4228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Course.Persistance", "SchoolProMa.Course.Persistance\SchoolProMa.Course.Persistance.csproj", "{7EDD9E3D-A6B8-45DF-8526-542E54A52E69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Course.Persistance", "SchoolProMa.Course.Persistance\SchoolProMa.Course.Persistance.csproj", "{7EDD9E3D-A6B8-45DF-8526-542E54A52E69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.Web", "SchoolProMa.Web\SchoolProMa.Web.csproj", "{5F848562-92FB-45C9-8F81-886ADCF6C02E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProMa.CourseAdm.Api", "SchoolProMa.CourseAdm.Api\SchoolProMa.CourseAdm.Api.csproj", "{4DA7B999-7076-48B0-BE52-57F4B40A38A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{E233588C-2CEF-4923-9047-CE2560395836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProMa.Course.IOC", "SchoolProMa.Course.IOC\SchoolProMa.Course.IOC.csproj", "{1EB2D4D4-004F-48CC-8BEA-25B2369737F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +75,18 @@ Global
 		{7EDD9E3D-A6B8-45DF-8526-542E54A52E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EDD9E3D-A6B8-45DF-8526-542E54A52E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EDD9E3D-A6B8-45DF-8526-542E54A52E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F848562-92FB-45C9-8F81-886ADCF6C02E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F848562-92FB-45C9-8F81-886ADCF6C02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F848562-92FB-45C9-8F81-886ADCF6C02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F848562-92FB-45C9-8F81-886ADCF6C02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA7B999-7076-48B0-BE52-57F4B40A38A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA7B999-7076-48B0-BE52-57F4B40A38A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA7B999-7076-48B0-BE52-57F4B40A38A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA7B999-7076-48B0-BE52-57F4B40A38A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB2D4D4-004F-48CC-8BEA-25B2369737F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB2D4D4-004F-48CC-8BEA-25B2369737F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB2D4D4-004F-48CC-8BEA-25B2369737F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB2D4D4-004F-48CC-8BEA-25B2369737F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +108,10 @@ Global
 		{98D8F362-3C6C-4F88-9496-B1E3093799F8} = {5B090D01-02EB-4212-AECF-861B8DF40DCB}
 		{860159A3-1C3F-4FBF-9EFD-5C78B9FF4228} = {44CB8E3B-6FCC-4E99-90E4-FAF4D2F6B7CD}
 		{7EDD9E3D-A6B8-45DF-8526-542E54A52E69} = {627BFE5F-53E6-4D21-9682-8B93A20890D5}
+		{5F848562-92FB-45C9-8F81-886ADCF6C02E} = {7ECEAE7D-A20A-483A-AFB5-013A29A3CA3B}
+		{4DA7B999-7076-48B0-BE52-57F4B40A38A1} = {8E143FAF-E22E-438B-BC54-1626B76315B8}
+		{E233588C-2CEF-4923-9047-CE2560395836} = {F3C74EB5-5FA1-465A-B177-322F95F8BC2E}
+		{1EB2D4D4-004F-48CC-8BEA-25B2369737F8} = {E233588C-2CEF-4923-9047-CE2560395836}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC465F4-1951-472A-B8ED-CB60C922B65E}
