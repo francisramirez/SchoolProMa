@@ -2,9 +2,8 @@
 using SchoolProMa.Course.Application.Base;
 using SchoolProMa.Course.Application.Contracts;
 using SchoolProMa.Course.Application.Dtos;
-using SchoolProMa.Course.Domain.Entities;
 using SchoolProMa.Course.Domain.Interfaces;
-
+using SchoolProMa.Course.Application.Extentions;
 namespace SchoolProMa.Course.Application.Services
 {
     public class CourseService : ICourseService
@@ -124,47 +123,54 @@ namespace SchoolProMa.Course.Application.Services
 
             try
             {
-                if (courseDtoSave is null)
-                {
-                    result.Success = false;
-                    result.Message = $"El objeto{nameof(courseDtoSave)} es requerido.";
-                    return result;
-                }
 
-                if (courseRepository.Exists(course => course.Title == courseDtoSave.Title))
-                {
-                    result.Success = false;
-                    result.Message = $"el curso {courseDtoSave.Title} ya encuentra registrado";
-                    return result;
-                }
+                result = courseDtoSave.IsValidCourse();
 
-                if (string.IsNullOrEmpty(courseDtoSave?.Title))
-                {
-                    result.Success = false;
-                    result.Message = $"El titulo del curso es requerido.";
+                if (!result.Success)
                     return result;
-                }
+                
 
-                if (courseDtoSave?.Credits == 0 || courseDtoSave?.Credits < 0)
-                {
-                    result.Success = false;
-                    result.Message = $"El credito del curso no puede ser cero o negativo.";
-                    return result;
-                }
-                if (courseDtoSave?.DepartmentID == 0)
-                {
-                    result.Success = false;
-                    result.Message = $"Debe seleccionar el departamento al que pertenece el curso.";
-                    return result;
-                }
+                //if (courseDtoSave is null)
+                //{
+                //    result.Success = false;
+                //    result.Message = $"El objeto{nameof(courseDtoSave)} es requerido.";
+                //    return result;
+                //}
+
+                //if (courseRepository.Exists(course => course.Title == courseDtoSave.Title))
+                //{
+                //    result.Success = false;
+                //    result.Message = $"el curso {courseDtoSave.Title} ya encuentra registrado";
+                //    return result;
+                //}
+
+                //if (string.IsNullOrEmpty(courseDtoSave?.Title))
+                //{
+                //    result.Success = false;
+                //    result.Message = $"El titulo del curso es requerido.";
+                //    return result;
+                //}
+
+                //if (courseDtoSave?.Credits == 0 || courseDtoSave?.Credits < 0)
+                //{
+                //    result.Success = false;
+                //    result.Message = $"El credito del curso no puede ser cero o negativo.";
+                //    return result;
+                //}
+                //if (courseDtoSave?.DepartmentID == 0)
+                //{
+                //    result.Success = false;
+                //    result.Message = $"Debe seleccionar el departamento al que pertenece el curso.";
+                //    return result;
+                //}
 
                 Domain.Entities.Course course = new Domain.Entities.Course()
                 {
                     DepartmentID = courseDtoSave.DepartmentID,
                     Title = courseDtoSave.Title,
                     Credits = courseDtoSave.Credits,
-                    CreationDate = courseDtoSave.CreationDate,
-                    CreationUser = courseDtoSave.CreationUser
+                    CreationDate = courseDtoSave.ChangeDate,
+                    CreationUser = courseDtoSave.ChangeUser
                 };
 
                 this.courseRepository.Save(course);
@@ -190,32 +196,38 @@ namespace SchoolProMa.Course.Application.Services
 
             try
             {
-                if (courseDtoUpdate is null)
-                {
-                    result.Success = false;
-                    result.Message = $"El objeto{nameof(courseDtoUpdate)} es requerido.";
-                    return result;
-                }
 
-                if (string.IsNullOrEmpty(courseDtoUpdate?.Title))
-                {
-                    result.Success = false;
-                    result.Message = $"El titulo del curso es requerido.";
-                    return result;
-                }
+                result = courseDtoUpdate.IsValidCourse();
 
-                if (courseDtoUpdate?.Credits == 0 || courseDtoUpdate?.Credits < 0)
-                {
-                    result.Success = false;
-                    result.Message = $"El credito del curso no puede ser cero o negativo.";
+                if (!result.Success)
                     return result;
-                }
-                if (courseDtoUpdate?.DepartmentID == 0)
-                {
-                    result.Success = false;
-                    result.Message = $"Debe seleccionar el departamento al que pertenece el curso.";
-                    return result;
-                }
+
+                //if (courseDtoUpdate is null)
+                //{
+                //    result.Success = false;
+                //    result.Message = $"El objeto{nameof(courseDtoUpdate)} es requerido.";
+                //    return result;
+                //}
+
+                //if (string.IsNullOrEmpty(courseDtoUpdate?.Title))
+                //{
+                //    result.Success = false;
+                //    result.Message = $"El titulo del curso es requerido.";
+                //    return result;
+                //}
+
+                //if (courseDtoUpdate?.Credits == 0 || courseDtoUpdate?.Credits < 0)
+                //{
+                //    result.Success = false;
+                //    result.Message = $"El credito del curso no puede ser cero o negativo.";
+                //    return result;
+                //}
+                //if (courseDtoUpdate?.DepartmentID == 0)
+                //{
+                //    result.Success = false;
+                //    result.Message = $"Debe seleccionar el departamento al que pertenece el curso.";
+                //    return result;
+                //}
 
                 Domain.Entities.Course course = new Domain.Entities.Course()
                 {
@@ -223,8 +235,8 @@ namespace SchoolProMa.Course.Application.Services
                     Title = courseDtoUpdate.Title,
                     Id = courseDtoUpdate.Id,
                     Credits = courseDtoUpdate.Credits,
-                    ModifyDate = courseDtoUpdate.ModifyDate,
-                    UserMod = courseDtoUpdate.ModifyUser
+                    ModifyDate = courseDtoUpdate.ChangeDate,
+                    UserMod = courseDtoUpdate.ChangeUser
                 };
 
                 this.courseRepository.Update(course);

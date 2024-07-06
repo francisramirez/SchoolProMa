@@ -2,7 +2,11 @@
 
 namespace SchoolProMa.Course.Application.Dtos
 {
-    internal class DtoBaseCourse
+    public abstract class DtoBaseCourse : DtoBase
     {
+        public string? Title { get; set; }
+        public int Credits { get; set; }
+        public int DepartmentID { get; set; }
+
     }
 }
