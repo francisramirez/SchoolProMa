@@ -15,6 +15,8 @@ namespace SchoolProMa.Web.Controllers
 
         public IActionResult Index()
         {
+
+         
             return View();
         }
 
@@ -29,4 +31,5 @@ namespace SchoolProMa.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+    public class StudentViewModel() { }
 }
